@@ -34,7 +34,10 @@ const Navbar = (props) => {
             <use xlinkHref={`${icons}#search`} />
           </svg>
         </div>
-        <div className="icons mr-6">
+        <div className="icons mr-6 relative">
+          <span className="rounded-[50%] bg-red-500 w-5 h-5 flex absolute text-white justify-center items-center top-[-0.5rem] right-[-0.5rem]">
+            3
+          </span>
           <svg className="fill-black w-5 h-5">
             <use xlinkHref={`${icons}#icon-shopping-basket`} />
           </svg>
