@@ -12,19 +12,19 @@ const Navbar = (props) => {
         </a>
       </div>
       <div className={classes.link_items}>
-        <a href="" className="mr-6">
+        <a href="" className="mr-8">
           home
         </a>
-        <a href="" className="mr-6">
+        <a href="" className="mr-8">
           about us
         </a>
-        <a href="" className="mr-6">
+        <a href="" className="mr-8">
           products
         </a>
-        <a href="" className="mr-6">
+        <a href="" className="mr-8">
           faq
         </a>
-        <a href="" className="mr-6">
+        <a href="" className="mr-8">
           contact us
         </a>
       </div>
