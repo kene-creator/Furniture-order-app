@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import HeaderBody from './HeaderBody';
+import Sponsor from './Sponsor';
 
 const Header = (props) => {
   return (
@@ -8,6 +9,7 @@ const Header = (props) => {
       <header className="font-mono">
         <Navbar></Navbar>
         <HeaderBody />
+        <Sponsor />
       </header>
     </React.Fragment>
   );

@@ -29,17 +29,17 @@ const Navbar = (props) => {
         </a>
       </div>
       <div className="flex mr-20">
-        <div className="icons mr-4">
+        <div className="icons mr-6">
           <svg className="fill-black w-5 h-5">
             <use xlinkHref={`${icons}#search`} />
           </svg>
         </div>
-        <div className="icons mr-4">
+        <div className="icons mr-6">
           <svg className="fill-black w-5 h-5">
             <use xlinkHref={`${icons}#icon-shopping-basket`} />
           </svg>
         </div>
-        <div className="icons mr-4">
+        <div className="icons">
           <svg className="fill-black w-5 h-5">
             <use xlinkHref={`${icons}#icon-user`} />
           </svg>
