@@ -5,7 +5,7 @@ import icons from '../../images/icons.svg';
 
 const Navbar = (props) => {
   return (
-    <nav className="h-20 flex justify-between items-center bg-[#FBFBFB]">
+    <nav className="h-20 flex justify-between items-center bg-[#FBFBFB] z-20 relative">
       <div>
         <a href="">
           <img src={logo} alt="Company logo" className="w-36 h-28" />
