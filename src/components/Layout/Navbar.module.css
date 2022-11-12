@@ -1,0 +1,25 @@
+.link_items {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  list-style: none;
+  padding: 1rem 3rem 0 0;
+}
+
+.link_items a::after {
+  content: '';
+  display: flex;
+  flex-direction: row;
+  width: 0;
+  height: 1.4px;
+  background: #000;
+  transition: width 0.3s ease-in;
+  -webkit-transition: width 0.3s ease-in;
+  -moz-transition: width 0.3s ease-in;
+  -ms-transition: width 0.3s ease-in;
+  -o-transition: width 0.3s ease-in;
+}
+
+.link_items a:hover::after {
+  width: 100%;
+}
