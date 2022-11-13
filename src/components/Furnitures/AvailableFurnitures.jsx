@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import icons from '../../images/icons.svg';
 
 const DUMMY_FURNITURES = [
   {
@@ -41,12 +42,34 @@ const DUMMY_FURNITURES = [
 
 const AvailableFurnitures = () => {
   const furnitureList = DUMMY_FURNITURES.map((furniture) => (
-    <li>{furniture.name}</li>
+    <li key={furniture.id} className="basis-[24%] h-52 bg-[#FFF4E8] mr-6 mb-28">
+      <button
+        className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center ml-auto mr-auto mt-[-1.5rem]"
+        type="submit"
+      >
+        Add To Cart
+        <div className="bg-white/50 ml-2 rounded-full p-1 ]">
+          <svg className="w-3 h-3 fill-white">
+            <use xlinkHref={`${icons}#icon-shopping-basket`} />
+          </svg>
+        </div>
+      </button>
+      <div className="font-mono ml-8">
+        <p className="text-2xl mt-2">{furniture.name}</p>
+        <div className="flex mt-4">
+          <p className="mr-8">{furniture.price}</p>
+          <p className="text-slate-300 line-through">{furniture.formerPrice}</p>
+        </div>
+        <div></div>
+      </div>
+    </li>
   ));
 
   return (
     <section>
-      <ul>{furnitureList}</ul>
+      <ul className="flex mt-20 flex-wrap justify-center items-center">
+        {furnitureList}
+      </ul>
     </section>
   );
 };
