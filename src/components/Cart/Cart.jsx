@@ -1,3 +1,5 @@
+import Modal from '../UI/Modal';
+
 const Cart = () => {
   const cartItems = (
     <ul>
@@ -8,27 +10,27 @@ const Cart = () => {
   );
 
   return (
-    <div>
+    <Modal>
       {cartItems}
-      <div>
-        <span>Total Amount</span>
-        <span>35.62</span>
+      <div className="flex justify-between p-3">
+        <span className="font-mono font-semibold text-2xl">Total Amount</span>
+        <span className="font-mono font-semibold text-2xl">35.62</span>
       </div>
-      <div>
+      <div className="flex mt-8 justify-end">
         <button
           type="button"
-          className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center ml-auto mr-auto mt-[-1rem]"
+          className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center mr-5 "
         >
           Close
         </button>
         <button
           type="submit"
-          className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center ml-auto mr-auto mt-[-1rem]"
+          className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center"
         >
           Order
         </button>
       </div>
-    </div>
+    </Modal>
   );
 };
 
