@@ -4,14 +4,16 @@ import HeaderBody from './HeaderBody';
 import Sponsor from './Sponsor';
 
 const Header = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { showCart } = props;
   return (
-    <React.Fragment>
+    <>
       <header className="font-mono">
-        <Navbar></Navbar>
+        <Navbar onShowCart={showCart} />
         <HeaderBody />
         <Sponsor />
       </header>
-    </React.Fragment>
+    </>
   );
 };
 

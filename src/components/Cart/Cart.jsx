@@ -1,6 +1,6 @@
 import Modal from '../UI/Modal';
 
-const Cart = () => {
+const Cart = (props) => {
   const cartItems = (
     <ul>
       {[{ id: 'c1', name: 'Husk', amoount: 12.99 }].map((item) => (
@@ -8,6 +8,8 @@ const Cart = () => {
       ))}
     </ul>
   );
+
+  const { onClose } = props;
 
   return (
     <Modal>
@@ -20,6 +22,7 @@ const Cart = () => {
         <button
           type="button"
           className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center mr-5 "
+          onClick={onClose}
         >
           Close
         </button>

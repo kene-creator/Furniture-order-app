@@ -56,7 +56,7 @@ const DUMMY_FURNITURES = [
 const AvailableFurnitures = () => {
   const furnitureList = DUMMY_FURNITURES.map((furniture) => (
     <li key={furniture.id} className="basis-[24%] h-52 bg-[#FFF4E8] mr-6 mb-28">
-      <FurnitureForm />
+      <FurnitureForm id={furniture.id} />
       <div className="font-mono ml-8">
         <p className="text-2xl mt-2">{furniture.name}</p>
         <div className="flex mt-4">

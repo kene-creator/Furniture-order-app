@@ -4,6 +4,9 @@ import classes from './Navbar.module.css';
 import icons from '../../images/icons.svg';
 
 const Navbar = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { onShowCart } = props;
+
   return (
     <nav className="h-20 flex justify-between items-center bg-[#FBFBFB] z-20 relative">
       <div>
@@ -30,7 +33,7 @@ const Navbar = (props) => {
       </div>
       <div className="flex mr-20">
         <div className="icons mr-6">
-          <svg className="fill-black w-5 h-5">
+          <svg className="fill-black w-5 h-5 cursor-pointer">
             <use xlinkHref={`${icons}#search`} />
           </svg>
         </div>
@@ -38,12 +41,15 @@ const Navbar = (props) => {
           <span className="rounded-[50%] bg-red-500 w-5 h-5 flex absolute text-white justify-center items-center top-[-0.5rem] right-[-0.5rem]">
             3
           </span>
-          <svg className="fill-black w-5 h-5">
+          <svg
+            className="fill-black w-5 h-5 cursor-pointer"
+            onClick={onShowCart}
+          >
             <use xlinkHref={`${icons}#icon-shopping-basket`} />
           </svg>
         </div>
         <div className="icons">
-          <svg className="fill-black w-5 h-5">
+          <svg className="fill-black w-5 h-5 cursor-pointer">
             <use xlinkHref={`${icons}#icon-user`} />
           </svg>
         </div>
