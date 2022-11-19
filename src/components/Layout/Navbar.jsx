@@ -10,7 +10,10 @@ const Navbar = (props) => {
 
   const cartCtx = useContext(CartContext);
 
-  const numCartItems = cartCtx.items;
+  const numCartItems = cartCtx.items.reduce(
+    (accumulator, currVal) => accumulator + currVal.amount,
+    0
+  );
 
   return (
     <nav className="h-20 flex justify-between items-center bg-[#FBFBFB] z-20 relative">
@@ -44,7 +47,7 @@ const Navbar = (props) => {
         </div>
         <div className="icons mr-6 relative">
           <span className="rounded-[50%] bg-red-500 w-5 h-5 flex absolute text-white justify-center items-center top-[-0.5rem] right-[-0.5rem]">
-            3
+            {numCartItems}
           </span>
           <svg
             className="fill-black w-5 h-5 cursor-pointer"

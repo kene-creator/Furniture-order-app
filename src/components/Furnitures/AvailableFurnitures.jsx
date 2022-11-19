@@ -1,4 +1,8 @@
+import React, { useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+
+import FurnitureForm from '../Form/FurnitureForm';
+import CartContext from '../../store/cart_context';
 
 import product1 from '../../images/product-1.png';
 import product2 from '../../images/product-2.png';
@@ -6,7 +10,6 @@ import product3 from '../../images/product-3.png';
 import product4 from '../../images/product-4.png';
 import product5 from '../../images/product-5.png';
 import product6 from '../../images/product-6.png';
-import FurnitureForm from '../Form/FurnitureForm';
 
 const DUMMY_FURNITURES = [
   {
@@ -54,21 +57,39 @@ const DUMMY_FURNITURES = [
 ];
 
 const AvailableFurnitures = () => {
-  const furnitureList = DUMMY_FURNITURES.map((furniture) => (
-    <li key={furniture.id} className="basis-[24%] h-52 bg-[#FFF4E8] mr-6 mb-28">
-      <FurnitureForm id={furniture.id} />
-      <div className="font-mono ml-8">
-        <p className="text-2xl mt-2">{furniture.name}</p>
-        <div className="flex mt-4">
-          <p className="mr-8">{furniture.price}</p>
-          <p className="text-slate-300 line-through">{furniture.formerPrice}</p>
+  const cartCtx = useContext(CartContext);
+
+  const furnitureList = DUMMY_FURNITURES.map((furniture) => {
+    const addToCartHandler = (amount) => {
+      cartCtx.addItem({
+        amount,
+        name: furniture.name,
+        id: furniture.id,
+        price: furniture.price
+      });
+    };
+
+    return (
+      <li
+        key={furniture.id}
+        className="basis-[24%] h-52 bg-[#FFF4E8] mr-6 mb-28"
+      >
+        <FurnitureForm id={furniture.id} onAddToCart={addToCartHandler} />
+        <div className="font-mono ml-8">
+          <p className="text-2xl mt-2">{furniture.name}</p>
+          <div className="flex mt-4">
+            <p className="mr-8">{furniture.price}</p>
+            <p className="text-slate-300 line-through">
+              {furniture.formerPrice}
+            </p>
+          </div>
         </div>
-      </div>
-      <div className="flex justify-center items-center flex-col">
-        <img src={furniture.productImage} alt="" className="h-48" />
-      </div>
-    </li>
-  ));
+        <div className="flex justify-center items-center flex-col">
+          <img src={furniture.productImage} alt="" className="h-48" />
+        </div>
+      </li>
+    );
+  });
 
   return (
     <section>
