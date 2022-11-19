@@ -3,6 +3,7 @@ import Header from './components/Layout/Header';
 import Collection from './components/Layout/Collection';
 import Products from './components/Layout/Products';
 import Cart from './components/Cart/Cart';
+import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsVisisble, setCartIsVisisble] = useState(false);
@@ -16,14 +17,14 @@ function App() {
   };
 
   return (
-    <>
+    <CartProvider>
       {cartIsVisisble && <Cart onClose={hideCartHandler} />}
       <Header showCart={showCartHandler} />
       <main>
         <Collection />
         <Products />
       </main>
-    </>
+    </CartProvider>
   );
 }
 

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../../store/cart_context';
 import logo from '../../images/logo.png';
 import classes from './Navbar.module.css';
 import icons from '../../images/icons.svg';
@@ -6,6 +7,10 @@ import icons from '../../images/icons.svg';
 const Navbar = (props) => {
   // eslint-disable-next-line react/prop-types
   const { onShowCart } = props;
+
+  const cartCtx = useContext(CartContext);
+
+  const numCartItems = cartCtx.items;
 
   return (
     <nav className="h-20 flex justify-between items-center bg-[#FBFBFB] z-20 relative">
