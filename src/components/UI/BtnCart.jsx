@@ -2,7 +2,7 @@ import icons from '../../images/icons.svg';
 
 const BtnCart = () => (
   <button
-    className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center ml-auto mr-auto mt-[-1rem]"
+    className="w-40 h-[3rem] bg-[#D9AB82] text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center ml-auto mr-auto mt-[-1rem] active:translate-y-px transition-all"
     type="submit"
   >
     Add To Cart

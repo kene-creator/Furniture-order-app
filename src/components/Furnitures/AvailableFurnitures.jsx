@@ -15,42 +15,42 @@ const DUMMY_FURNITURES = [
   {
     id: uuidv4(),
     name: 'Ramen Stool',
-    price: '$65.00',
+    price: '65.00',
     formerPrice: '$95.00',
     productImage: product1
   },
   {
     id: uuidv4(),
     name: 'Flexform',
-    price: '$35.00',
+    price: '35.00',
     formerPrice: '$55.00',
     productImage: product2
   },
   {
     id: uuidv4(),
     name: 'Porada',
-    price: '$87.00',
+    price: '87.00',
     formerPrice: '$97.00',
     productImage: product3
   },
   {
     id: uuidv4(),
     name: 'Amora',
-    price: '$65.00',
+    price: '65.00',
     formerPrice: '$95.00',
     productImage: product4
   },
   {
     id: uuidv4(),
     name: 'Taknion',
-    price: '$45.00',
+    price: '45.00',
     formerPrice: '$55.00',
     productImage: product5
   },
   {
     id: uuidv4(),
     name: 'Liquid Contract',
-    price: '$35.00',
+    price: '35.00',
     formerPrice: '$45.00',
     productImage: product6
   }
@@ -65,7 +65,7 @@ const AvailableFurnitures = () => {
         amount,
         name: furniture.name,
         id: furniture.id,
-        price: furniture.price
+        price: +furniture.price
       });
     };
 
@@ -78,7 +78,7 @@ const AvailableFurnitures = () => {
         <div className="font-mono ml-8">
           <p className="text-2xl mt-2">{furniture.name}</p>
           <div className="flex mt-4">
-            <p className="mr-8">{furniture.price}</p>
+            <p className="mr-8">{`$${furniture.price}`}</p>
             <p className="text-slate-300 line-through">
               {furniture.formerPrice}
             </p>
