@@ -13,36 +13,41 @@
 }
 
 .modal {
-  position: fixed;
-  top: 15vh;
-  left: 5%;
+  position: absolute;
+  top: 13.2vh;
+  right: 0;
   width: 90%;
-  height: 30rem;
+  height: 100%;
   overflow: scroll;
   scrollbar-width: thin;
   overflow-x: hidden;
   background-color: white;
-  padding: 1rem;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 0 1rem 3rem 1rem;
   z-index: 30;
   animation: slide-down 300ms ease-out forwards;
 }
 
 @media (min-width: 768px) {
   .modal {
-    width: 40rem;
-    left: calc(50% - 20rem);
+    width: 30rem;
   }
 }
 
 @keyframes slide-down {
   from {
     opacity: 0;
-    transform: translateY(-3rem);
+    transform: translateX(3rem);
+    -webkit-transform: translateX(3rem);
+    -moz-transform: translateX(3rem);
+    -ms-transform: translateX(3rem);
+    -o-transform: translateX(3rem);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
   }
 }

@@ -63,6 +63,7 @@ const AvailableFurnitures = () => {
     const addToCartHandler = (amount) => {
       cartCtx.addItem({
         amount,
+        image: furniture.productImage,
         name: furniture.name,
         id: furniture.id,
         price: +furniture.price
