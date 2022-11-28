@@ -4,7 +4,7 @@ import React from 'react';
 const Input = React.forwardRef((props, ref) => {
   const { label } = props;
   return (
-    <div className="mt-[-2rem] flex justify-center items-center">
+    <div className="mt-[-2rem] flex justify-center items-center hidden">
       <input
         ref={ref}
         {...props.input}
