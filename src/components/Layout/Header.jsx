@@ -2,16 +2,22 @@ import React from 'react';
 import Navbar from './Navbar';
 import HeaderBody from './HeaderBody';
 import Sponsor from './Sponsor';
+import Collection from './Collection';
+import Products from './Products';
 
 const Header = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { showCart } = props;
   return (
-    <React.Fragment>
+    <>
       <header className="font-mono">
-        <Navbar></Navbar>
+        <Navbar onShowCart={showCart} />
         <HeaderBody />
         <Sponsor />
+        <Collection />
+        <Products />
       </header>
-    </React.Fragment>
+    </>
   );
 };
 

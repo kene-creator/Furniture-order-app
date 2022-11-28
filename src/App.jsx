@@ -1,14 +1,29 @@
+import { useState } from 'react';
 import Header from './components/Layout/Header';
-import Collection from './components/Layout/Collection';
-import Products from './components/Layout/Products';
+
+import Cart from './components/Cart/Cart';
+import CartProvider from './store/CartProvider';
+import Review from './components/Layout/Review';
+import SignUp from './components/Layout/SignUp';
 
 function App() {
+  const [cartIsVisisble, setCartIsVisisble] = useState(false);
+
+  const showCartHandler = () => {
+    setCartIsVisisble(true);
+  };
+
+  const hideCartHandler = () => {
+    setCartIsVisisble(false);
+  };
+
   return (
-    <>
-      <Header></Header>
-      <Collection></Collection>
-      <Products></Products>
-    </>
+    <CartProvider>
+      {cartIsVisisble && <Cart onClose={hideCartHandler} />}
+      <Header showCart={showCartHandler} />
+      <Review />
+      <SignUp />
+    </CartProvider>
   );
 }
 

@@ -12,6 +12,7 @@
     "@babel/core": "^7.19.6",
     "@vitejs/plugin-react": "^2.2.0",
     "eslint": "^8.27.0",
+    "framer-motion": "^7.6.12",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "uuid": "^9.0.0",

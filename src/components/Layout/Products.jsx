@@ -3,7 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import AvailableFurnitures from '../Furnitures/AvailableFurnitures';
 
 const Products = () => {
-  const [active, setActive] = useState(null);
+  const [active, setActive] = useState('Chair');
 
   const links = ['All', 'Bed', 'Sofa', 'Chair', 'Light'];
 
