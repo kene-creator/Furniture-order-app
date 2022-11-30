@@ -1,8 +1,8 @@
 import stripe from '../../images/stripe.png';
 import accenture from '../../images/accenture.png';
 import deloitte from '../../images/deloitte.png';
-import google from '../../images/google.png';
-import ibm from '../../images/ibm.png';
+import google from '../../images/Google.png';
+import ibm from '../../images/IBM.png';
 
 const Sponsor = () => {
   return (
