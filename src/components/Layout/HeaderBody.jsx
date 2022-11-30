@@ -1,4 +1,4 @@
-import image1 from '../../images/image.jpg';
+import image1 from '../../images/Image.jpg';
 
 const HeaderBody = () => (
   <>
