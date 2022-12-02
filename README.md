@@ -10,6 +10,8 @@
 
 ## Live Link
 
+[Live](https://cool-heliotrope-d40210.netlify.app/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
