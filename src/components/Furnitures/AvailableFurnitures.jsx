@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 import FurnitureForm from '../Form/FurnitureForm';
@@ -10,6 +10,7 @@ import product3 from '../../images/product-3.png';
 import product4 from '../../images/product-4.png';
 import product5 from '../../images/product-5.png';
 import product6 from '../../images/product-6.png';
+import icons from '../../images/icons.svg';
 
 const DUMMY_FURNITURES = [
   {
@@ -57,9 +58,49 @@ const DUMMY_FURNITURES = [
 ];
 
 const AvailableFurnitures = () => {
+  const [furnitures, setFurnitures] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      const fetchData = async () => {
+        const response = await fetch(
+          'https://react-http-f70a2-default-rtdb.firebaseio.com/furnitues.json'
+        );
+        const responseData = await response.json();
+
+        const loadedFurnitures = [];
+
+        // eslint-disable-next-line no-restricted-syntax
+        for (const key in responseData) {
+          if (responseData) {
+            loadedFurnitures.push({
+              id: key,
+              name: responseData[key].name,
+              price: responseData[key].price,
+              formerPrice: responseData[key].formerPrice
+            });
+          }
+        }
+        setFurnitures(loadedFurnitures);
+        setLoading(false);
+      };
+      fetchData();
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <svg className="fill-black w-32 h-32 animate-spin mx-auto my-16">
+        <use xlinkHref={`${icons}#icon-spinner3`} />
+      </svg>
+    );
+  }
+
   const cartCtx = useContext(CartContext);
 
-  const furnitureList = DUMMY_FURNITURES.map((furniture) => {
+  const furnitureList = furnitures.map((furniture) => {
     const addToCartHandler = (amount) => {
       cartCtx.addItem({
         amount,
@@ -81,7 +122,7 @@ const AvailableFurnitures = () => {
           <div className="flex mt-4">
             <p className="mr-8">{`$${furniture.price}`}</p>
             <p className="text-slate-300 line-through">
-              {furniture.formerPrice}
+              {`$${furniture.formerPrice}`}
             </p>
           </div>
         </div>
