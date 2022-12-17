@@ -6,7 +6,7 @@ const SignUp = () => (
   <>
     <div className="flex justify-between items-center mb-8">
       <div className="ml-32">
-        <p className="text-[#FE8432] text-sm border border-[#FE8432] w-32 rounded-xl mb-12 flex justify-center">
+        <p className="text-[#FE8432] text-sm border border-[#FE8432] w-[9rem] rounded-xl mb-12 flex justify-center">
           Mistruim Interior
         </p>
         <h3 className="text-4xl w-[50%] mb-8">
@@ -20,7 +20,7 @@ const SignUp = () => (
           />
           <button
             type="submit"
-            className="bg-[#D9AB82] h-[3rem] text-white absolute top-0 right-2 mt-2 py-3 px-4 flex items-center justify-center"
+            className="bg-[#D9AB82] h-[3rem] text-white absolute top-0 right-8 mt-2 py-3 px-4 flex items-center justify-center"
           >
             Get started
             <div className="bg-[#FAE2C8] py-4 px-4 ml-2 mr-[-0.8rem]">

@@ -90,6 +90,8 @@ const AvailableFurnitures = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  const cartCtx = useContext(CartContext);
+
   if (loading) {
     return (
       <svg className="fill-black w-32 h-32 animate-spin mx-auto my-16">
@@ -97,8 +99,6 @@ const AvailableFurnitures = () => {
       </svg>
     );
   }
-
-  const cartCtx = useContext(CartContext);
 
   const furnitureList = furnitures.map((furniture) => {
     const addToCartHandler = (amount) => {

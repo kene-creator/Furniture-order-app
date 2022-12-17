@@ -1,4 +1,5 @@
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Modal from '../UI/Modal';
 import CartContext from '../../store/cart_context';
 import CartItem from './CartItem';
@@ -35,7 +36,7 @@ const Cart = (props) => {
     </ul>
   );
 
-  const { onClose } = props;
+  const { onClose, visible } = props;
 
   return (
     <Modal onClose={onClose}>
@@ -53,12 +54,14 @@ const Cart = (props) => {
           Close
         </button>
         {hasItems && (
-          <button
+          <Link
+            to="/checkout"
             type="submit"
             className="w-20 h-[2.3rem] bg-[#D9AB82] font-mono text-white font-bold py-2 px-4 rounded-[2.5rem] flex justify-center items-center"
+            onClick={() => visible()}
           >
             Order
-          </button>
+          </Link>
         )}
       </div>
     </Modal>
