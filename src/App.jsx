@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
 import Header from './components/Layout/Header';
 
 import Cart from './components/Cart/Cart';
 import CartProvider from './store/CartProvider';
-import Review from './components/Layout/Review';
-import SignUp from './components/Layout/SignUp';
+import Checkout from './components/Cart/Checkout';
 
 function App() {
   const [cartIsVisisble, setCartIsVisisble] = useState(false);
@@ -18,12 +19,17 @@ function App() {
   };
 
   return (
-    <CartProvider>
-      {cartIsVisisble && <Cart onClose={hideCartHandler} />}
-      <Header showCart={showCartHandler} />
-      <Review />
-      <SignUp />
-    </CartProvider>
+    <BrowserRouter>
+      <CartProvider>
+        {cartIsVisisble && (
+          <Cart onClose={hideCartHandler} visible={hideCartHandler} />
+        )}
+        <Routes>
+          <Route path="/" element={<Header showCart={showCartHandler} />} />
+          <Route path="/checkout" element={<Checkout />} />
+        </Routes>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

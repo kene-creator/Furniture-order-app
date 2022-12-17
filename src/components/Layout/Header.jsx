@@ -4,6 +4,8 @@ import HeaderBody from './HeaderBody';
 import Sponsor from './Sponsor';
 import Collection from './Collection';
 import Products from './Products';
+import Review from './Review';
+import SignUp from './SignUp';
 
 const Header = (props) => {
   // eslint-disable-next-line react/prop-types
@@ -16,6 +18,8 @@ const Header = (props) => {
         <Sponsor />
         <Collection />
         <Products />
+        <Review />
+        <SignUp />
       </header>
     </>
   );
