@@ -74,6 +74,11 @@ const Checkout = () => {
     setSignInPage((prev) => !prev);
   };
 
+  const googleSignup = async () => {
+    await auth.signInWithPopup(provider);
+    history('/dashboard');
+  };
+
   return (
     <form
       className="flex w-full h-screen overflow-hidden"
@@ -171,7 +176,7 @@ const Checkout = () => {
                   className="flex items-center justify-center rounded-[2rem] border border-black py-2 px-6"
                   onClick={(e) => {
                     e.preventDefault();
-                    return auth.signInWithPopup(provider);
+                    return googleSignup();
                   }}
                 >
                   <img
