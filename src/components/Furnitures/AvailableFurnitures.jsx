@@ -78,7 +78,8 @@ const AvailableFurnitures = () => {
               id: key,
               name: responseData[key].name,
               price: responseData[key].price,
-              formerPrice: responseData[key].formerPrice
+              formerPrice: responseData[key].formerPrice,
+              productImage: responseData[key].productImage
             });
           }
         }
