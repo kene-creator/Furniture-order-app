@@ -39,7 +39,7 @@ const Navbar = (props) => {
   }, [items]);
 
   return (
-    <nav className="h-20 flex justify-between items-center bg-[#FBFBFB] z-30 sticky top-0">
+    <nav className="h-20 flex justify-between items-center z-30 sticky top-0 backdrop-blur-2xl">
       <div>
         <a href="">
           <img src={logo} alt="Company logo" className="w-36 h-28" />
